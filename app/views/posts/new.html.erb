@@ -1,0 +1,10 @@
+<h1>Create a New Post</h1>
+
+<%= form_for @post do |f| %>
+  Title: <%= f.text_field :title, placeholder: "Title" %> <br>
+  Date: <%= f.date_field :date %> <br>
+  Location: <%= f.text_field :location, placeholder: "Where are you now?" %> <br>
+  Body: <%= f.text_area :body, size:"30x10" %> <br>
+  Image: <%= f.text_area :img_url %> <br> <!-- temporary -->
+  <%= f.submit %>
+<% end %>
