@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 #           PATCH  /posts/:id(.:format)      posts#update
 #           PUT    /posts/:id(.:format)      posts#update
 #           DELETE /posts/:id(.:format)      posts#destroy
-  resources :groups
+  resources :groups 
 #   groups  GET    /groups(.:format)          groups#index
 #           POST   /groups(.:format)          groups#create
 # new_group GET    /groups/new(.:format)      groups#new
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 #           PATCH  /groups/:id(.:format)      groups#update
 #           PUT    /groups/:id(.:format)      groups#update
 #           DELETE /groups/:id(.:format)      groups#destroy
+
 
   delete '/logout' => 'sessions#destroy', as: :logout
   resources :sessions, only: [:new, :create]

@@ -1,7 +1,7 @@
 <h1><%= @user.first_name + " " + @user.last_name %>'s Page</h1>
 
 <h2>My Groups:</h2>
-<% @user.groups.each do |g| %>
+<% @groups.each do |g| %>
   <li><%= link_to g.name, group_path(g) %></li>
 <% end %>
 
@@ -16,4 +16,3 @@
   <%= link_to "Edit my information", edit_user_path(@user)%> <br><!--show edit information button only if I'm logged in to my account, not other user's -->
 <% end %>
 <!-- <%= link_to "All Posts", posts_path %> <br> -->
-<%= link_to "Home", "/" %>

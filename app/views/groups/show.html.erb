@@ -1,5 +1,8 @@
 <h1>Group: <%= @group.name %></h1>
-<%= link_to "My Profile", current_user %><br>
+<p>Members:
+  <% @group.memberships.each do |m| %>
+    <%= link_to m.user.first_name, user_path(m.user) %>
+  <% end  %></p>
 <% @group.posts.each do |p| %>
   <%= link_to (image_tag  p.img_url, {size: '200x200', alt: p.title}), post_path(p)  %>
 <% end %>
