@@ -1,5 +1,8 @@
 <h1>Project 02: Home</h1>
 
-
-<h2><%= link_to "Sign Up", new_user_path %></h2>
-<h2><%= link_to "Show all users", users_path %> </h2>
+<% if logged_in?  %>
+  <h2><%= link_to "My Profile", user_path(current_user) %></h2>
+<% else %>
+  <h2><%= link_to "Sign Up", new_user_path %></h2>
+<% end %>
+<!-- <h2><%= link_to "Show all users", users_path %> </h2> -->

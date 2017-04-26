@@ -1,2 +1,12 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit My Infomation:</h1>
+
+<%= form_for @user do |f| %>
+  <p>Name:<%= f.text_field :first_name, placeholder: "First Name" %>
+  <%= f.text_field :last_name, placeholder: "Last Name" %></p>
+  <p>Email address: <%= f.text_field :email, placeholder: "Email address" %> </p>
+  <p>Password: <%= f.text_field :password, placeholder: "Password" %> </p>
+  <p>Birthday: <%= f.date_field :birthday, placeholder: "Birthday" %> </p>
+  <p>Current Location: <%= f.text_field :current_location, placeholder: "Current Location" %></p>
+  <%= f.submit 'Update My Information'%>
+<% end %>
+<%= link_to "Delete My Account", user_path(@user), method: :delete %>

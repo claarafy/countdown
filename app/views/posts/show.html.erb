@@ -1,9 +1,12 @@
-
 <h1><%= @post.title %></h1>
 <h2>By <%= @post.user.first_name %></h2>
 <h3>In <%= @post.location %>, on <%= @post.date.to_formatted_s :long_ordinal %> </h3>
 <p><%= @post.body %></p>
 <%= image_tag  @post.img_url, {size: '500x500', alt:@post.title} %><br>
 
+
+<% if current_user == @post.user %> <!-- if you are the one that posted this, you can edit-->
+  <%= link_to "Edit this post", edit_post_path(@post) %><br>
+<% end %>
 <%= link_to "View All Posts", posts_path %> <br>
 <%= link_to "Home", "/" %>
