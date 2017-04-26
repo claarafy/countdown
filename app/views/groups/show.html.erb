@@ -1,8 +1,13 @@
 <h1>Group: <%= @group.name %></h1>
+
+<h3><%= link_to "Edit Group Info", edit_group_path(@group) %></h3>
 <p>Members:
   <% @group.memberships.each do |m| %>
     <%= link_to m.user.first_name, user_path(m.user) %>
   <% end  %></p>
+
 <% @group.posts.each do |p| %>
   <%= link_to (image_tag  p.img_url, {size: '200x200', alt: p.title}), post_path(p)  %>
-<% end %>
+<% end %><br>
+
+<%= link_to "Create New Post", new_post_path %>

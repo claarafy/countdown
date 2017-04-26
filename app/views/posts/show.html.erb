@@ -8,4 +8,4 @@
 <% if current_user == @post.user %> <!-- if you are the one that posted this, you can edit-->
   <%= link_to "Edit this post", edit_post_path(@post) %><br>
 <% end %>
-<%= link_to "View All Posts", posts_path %> <br>
+<%= link_to "View All Posts", group_path(@group)  %> <br>

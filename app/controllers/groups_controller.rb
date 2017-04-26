@@ -23,13 +23,27 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.new
+    @group = Group.find(params[:id])
   end
 
   def update
+    @group = Group.find(params[:id])
+
+    if @group.update_attributes(group_params)
+      redirect_to group_path(@group)
+    else
+      redirect_to edit_group_path(@group)
+    end
   end
 
   def destroy
+    @group = Group.find(params[:id])
+
+    if @group.destroy
+      redirect_to current_user
+    else
+      
+    end
   end
 
   private
