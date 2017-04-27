@@ -9,15 +9,8 @@
   </head>
 
   <body>
-    <%= link_to "Home", "/" %>
-    <% if logged_in? %>
-      <p>Logged in as <%= current_user.first_name %></p>
-      <%= link_to "My Profile", current_user %>
-      <%= link_to "Logout", logout_path, method: :delete %>
-    <% else %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
-    <br>
+    <%= render 'partials/navbar' %>
+
     <%= flash[:alert] %>
     <%= yield %>
   </body>
