@@ -4,4 +4,5 @@ class Group < ApplicationRecord
   has_many :posts #through: :users
 
   has_many :invites
+
 end
