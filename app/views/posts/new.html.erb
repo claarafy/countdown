@@ -1,6 +1,6 @@
 <h1>Create a New Post</h1>
 
-<%= form_for @post do |f| %>
+<%= form_for [@group, @post] do |f| %>
   Title: <%= f.text_field :title, placeholder: "Title" %> <br>
   Date: <%= f.date_field :date %> <br>
   Location: <%= f.text_field :location, placeholder: "Where are you now?" %> <br>

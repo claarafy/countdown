@@ -10,16 +10,18 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @group = Group.find(params[:group_id])
   end
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
+    @post.group = Group.find(params[:group_id])
 
     if @post.save
-      @post.user = current_user
-      redirect_to posts_path
+      redirect_to group_path(@post.group)
     else
-      redirect_to new_post_path
+      redirect_to root_path
     end
   end
 
@@ -47,6 +49,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:id, :title, :date, :location, :body, :img_url, :_destroy)
+    params.require(:post).permit(:id, :title, :date, :location, :body, :img_url,:user_id, :group_id, :_destroy)
   end
 end

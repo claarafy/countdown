@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @post = @group.posts.build
   end
 
   def new
@@ -42,7 +43,7 @@ class GroupsController < ApplicationController
     if @group.destroy
       redirect_to current_user
     else
-      
+
     end
   end
 

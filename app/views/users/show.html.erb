@@ -9,7 +9,7 @@
   <li><%= link_to g.name, group_path(g) %></li>
 <% end %>
 
-<% if current_user == @user %>
+<% if @user == current_user%>
   <h4><%= link_to "Create New Group", new_group_path %></h4>
 <% end %>
 <!-- <h2>My Posts:</h2>
