@@ -41,7 +41,7 @@
             <ul class="dropdown-menu">
               <li><a href="<%= user_path(current_user)%>" >My Profile</a></li>
               <li><a href="#">Invitations</a></li>
-              <li><a href="#">Setting</a></li>
+              <li><a href="<%=edit_user_path(current_user)%>">Setting</a></li>
               <li role="separator" class="divider"></li>
               <li><%= link_to 'Logout', logout_path, method: 'delete' %></li>
             </ul>
