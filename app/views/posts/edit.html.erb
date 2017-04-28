@@ -1,11 +1,13 @@
-<h1>Edit My Post</h1>
+<div class="container group-edit">
+  <h1>Edit My Post</h1>
 
-<%= form_for @post do |f| %>
-  Title: <%= f.text_field :title, placeholder: "Title" %> <br>
-  Date: <%= f.date_field :date %> <br>
-  Location: <%= f.text_field :location, placeholder: "Where are you now?" %> <br>
-  Body: <%= f.text_area :body, size:"30x10" %> <br>
-  Image: <%= f.file_field :img_url %> <br> <!-- temporary -->
-  <%= f.submit 'Update Post' %>
-<% end %>
-<%= link_to "Delete Post", post_path(@post), method: :delete %>
+  <%= form_for @post do |f| %>
+    Title: <%= f.text_field :title, placeholder: "Title" %> <br>
+    Date: <%= f.date_field :date %> <br>
+    Location: <%= f.text_field :location, placeholder: "Where are you now?" %> <br>
+    Body: <%= f.text_area :body, size:"30x10" %> <br>
+    Image: <%= f.file_field :img_url %> <br> <!-- temporary -->
+    <%= f.submit 'Update Post' %>
+  <% end %>
+  <%= link_to "Delete Post", post_path(@post), method: :delete %>
+</div>
