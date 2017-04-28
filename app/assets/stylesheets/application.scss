@@ -15,7 +15,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  body {
-   background: url("leaves02.png");
+   background: image-url("leaves02.png");
    background-size: cover;
  }
  .container {
