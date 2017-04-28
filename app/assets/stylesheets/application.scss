@@ -15,13 +15,18 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 body {
-  background: url("leaves.png");
+  background: url("leaves02.png");
+
   background-size: cover;
 }
 .title {
   font-family: 'Reenie Beanie', cursive;
+  font-weight: 900;
   text-align: center;
   margin-top: 25%;
+  background-color: #ffffff;
+  opacity: 0.8;
+  filter: alpha(opacity=60);
 }
 .title > h1 {
   font-family: 'Reenie Beanie', cursive;
@@ -33,6 +38,8 @@ body {
 }
 .countdown {
   border-radius: 5px;
+  border: 1px dotted grey;
+  background-color: white;
 }
 .navbar {
   margin-bottom: 0;
