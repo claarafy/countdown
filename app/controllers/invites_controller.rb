@@ -1,12 +1,13 @@
 class InvitesController < ApplicationController
   def index
+    @invites = Invite.all
   end
 
   def show
   end
 
   def new
-
+    @invite = Invite.new
   end
 
   def create
@@ -27,7 +28,7 @@ class InvitesController < ApplicationController
   def edit
   end
 
-  def create
+  def update
   end
 
   def destroy

@@ -11,23 +11,23 @@
       <li><a href="#">Invite Member</a></li>
      </ul>
    </li>
-   <li><a href="#">Invitations</a></li>
    <li><a href="<%= new_group_post_path(@group)%>">New Post</a></li>
   </ul>
 </div>
 
 <div class="container group-show">
   <h1>Group: <%= @group.name %></h1>
+  <p><%= @group.description %></p>
     <!-- <% @group.memberships.each do |m| %>
       <%= link_to m.user.first_name, user_path(m.user) %>
     <% end  %></p> -->
 
-    <!-- <p>Invite a member:</p>
+    <p>Invite a member:</p>
       <%= form_for [@group, @invite] do |f| %>
           <%= f.text_field :receiver_id, placeholder: "receiver" %>
           <%= f.text_field :message, placeholder: "message" %>
           <%= f.submit 'Send' %>
-      <% end %> -->
+      <% end %>
 
   <% @group.posts.each do |p| %>
     <!-- <% if p.title == nil %>
