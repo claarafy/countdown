@@ -18,10 +18,12 @@ Rails.application.routes.draw do
 #           PATCH  /posts/:id(.:format)      posts#update
 #           PUT    /posts/:id(.:format)      posts#update
 #           DELETE /posts/:id(.:format)      posts#destroy
-
+  # post '/groups/:group_id/invites' => 'invites#create'
   resources :groups do
     resources :posts
+    resources :invites
   end
+
 #   groups  GET    /groups(.:format)          groups#index
 #           POST   /groups(.:format)          groups#create
 # new_group GET    /groups/new(.:format)      groups#new
@@ -40,6 +42,14 @@ Rails.application.routes.draw do
 #                 PUT    /groups/:group_id/posts/:id(.:format)      posts#update
 #                 DELETE /groups/:group_id/posts/:id(.:format)      posts#destroy
 
+# group_invites     GET    /groups/:group_id/invites(.:format)          invites#index
+#                   POST   /groups/:group_id/invites(.:format)          invites#create
+# new_group_invite  GET    /groups/:group_id/invites/new(.:format)      invites#new
+# edit_group_invite GET    /groups/:group_id/invites/:id/edit(.:format) invites#edit
+#  group_invite     GET    /groups/:group_id/invites/:id(.:format)      invites#show
+#                   PATCH  /groups/:group_id/invites/:id(.:format)      invites#update
+#                   PUT    /groups/:group_id/invites/:id(.:format)      invites#update
+#                   DELETE /groups/:group_id/invites/:id(.:format)      invites#destroy
 
 
   delete '/logout' => 'sessions#destroy', as: :logout
