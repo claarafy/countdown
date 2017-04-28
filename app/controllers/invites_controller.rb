@@ -16,7 +16,7 @@ class InvitesController < ApplicationController
     @invite.receiver = @receiver
     @group = Group.find(params[:group_id])
     @invite.group = @group
-    
+
     if @invite.save
       redirect_to group_path(@group)
     else

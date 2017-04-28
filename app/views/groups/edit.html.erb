@@ -1,11 +1,13 @@
-<h1>Edit Group: <%= @group.name %></h1>
+<div class="container group-edit">
+  <h1>Edit Group: <%= @group.name %></h1>
 
-<%= form_for @group do |f| %>
-  Name your group <br>
-  <%= f.text_field :name, placeholder: "Group Name" %> <br>
-  Group description <br>
-  <%= f.text_area :description, placeholder: "Group Description"%><br>
-  <%= f.submit 'Update Group' %>
-<% end %>
+  <%= form_for @group do |f| %>
+    Name your group <br>
+    <%= f.text_field :name, placeholder: "Group Name" %> <br>
+    Group description <br>
+    <%= f.text_area :description, placeholder: "Group Description"%><br>
+    <%= f.submit 'Update Group', class: 'btn btn-primary' %>
+  <% end %>
 
-<%= link_to 'Delete Group', group_path(@group), method: :delete %>
+  <%= link_to 'Delete Group', group_path(@group), method: :delete %>
+</div>

@@ -1,25 +1,41 @@
-<h1>Group: <%= @group.name %></h1>
+<div class="navbar navbar-default navbar-fixed-left navbar-margin">
+  <a class="navbar-brand"><%= @group.name %></a>
+  <ul class="nav navbar-nav">
+  <li><a href="<%= edit_group_path(@group)%>">Edit Group</a></li>
+   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Members <span class="caret"></span></a>
+     <ul class="dropdown-menu" role="menu">
+       <% @group.memberships.each do |m| %>
+         <li><%= link_to m.user.first_name, user_path(m.user) %></li>
+       <% end  %>
+      <li class="divider"></li>
+      <li><a href="#">Invite Member</a></li>
+     </ul>
+   </li>
+   <li><a href="#">Invitations</a></li>
+   <li><a href="<%= new_group_post_path(@group)%>">New Post</a></li>
+  </ul>
+</div>
 
-<h3><%= link_to "Edit Group Info", edit_group_path(@group) %></h3>
-<p>Members:
-  <% @group.memberships.each do |m| %>
-    <%= link_to m.user.first_name, user_path(m.user) %>
-  <% end  %></p>
+<div class="container group-show">
+  <h1>Group: <%= @group.name %></h1>
+    <!-- <% @group.memberships.each do |m| %>
+      <%= link_to m.user.first_name, user_path(m.user) %>
+    <% end  %></p> -->
 
+    <!-- <p>Invite a member:</p>
+      <%= form_for [@group, @invite] do |f| %>
+          <%= f.text_field :receiver_id, placeholder: "receiver" %>
+          <%= f.text_field :message, placeholder: "message" %>
+          <%= f.submit 'Send' %>
+      <% end %> -->
 
-<p>Invite a member:</p>
-  <%= form_for [@group, @invite] do |f| %>
-      <%= f.text_field :receiver_id, placeholder: "receiver" %>
-      <%= f.text_field :message, placeholder: "message" %>
-      <%= f.submit 'Send' %>
+  <% @group.posts.each do |p| %>
+    <!-- <% if p.title == nil %>
+      <% p.destroy %>
+    <% else  %> -->
+      <%= link_to (image_tag  p.img_url, {size: '200x200', alt: p.title}), post_path(p) %>
+    <% end %>
   <% end %>
 
-<% @group.posts.each do |p| %>
-  <% if p.title == nil %>
-    <% p.destroy %>
-  <% else  %>
-    <%= link_to (image_tag  p.img_url, {size: '200x200', alt: p.title}), post_path(p) %>
-  <% end %>
-<% end %><br>
-
-<%= link_to "Create New Post", new_group_post_path(@group) %>
+  <%= link_to "Create New Post", new_group_post_path(@group) %>
+</div>

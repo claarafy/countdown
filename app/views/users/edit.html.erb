@@ -1,12 +1,34 @@
-<h1>Edit My Infomation:</h1>
+<div class="container user-edit">
+  <h1>Edit My Infomation:</h1>
 
-<%= form_for @user do |f| %>
-  <p>Name:<%= f.text_field :first_name, placeholder: "First Name" %>
-  <%= f.text_field :last_name, placeholder: "Last Name" %></p>
-  <p>Email address: <%= f.text_field :email, placeholder: "Email address" %> </p>
-  <p>Password: <%= f.text_field :password, placeholder: "Password" %> </p>
-  <p>Birthday: <%= f.date_field :birthday, placeholder: "Birthday" %> </p>
-  <p>Current Location: <%= f.text_field :current_location, placeholder: "Current Location" %></p>
-  <%= f.submit 'Update My Information'%>
-<% end %>
-<%= link_to "Delete My Account", user_path(@user), method: :delete %>
+  <div class="container login-form">
+    <%= form_for @user do |f| %>
+      <div class = "form-group choose-file">
+        <%= f.file_field :profile_pic %>
+      </div>
+      <div class = "form-group col-md-12">
+        <%= f.text_field :first_name, placeholder: "First Name", class: "col-md-3" %>
+        <%= f.text_field :last_name, placeholder: "Last Name", class: "col-md-3" %>
+      </div>
+
+      <div class = "form-group col-md-12">
+        <%= f.text_field :email, placeholder: "Email address", class: "col-md-6"%>
+      </div>
+
+      <div class = "form-group col-md-12">
+        <%= f.text_field :password, placeholder: "Password", class: "col-md-6" %>
+      </div>
+
+      <div class = "form-group col-md-12">
+        <%= f.date_field :birthday, placeholder: "Birthday", class: "col-md-6" %>
+      </div>
+      <div class = "form-group col-md-12">
+        <%= f.text_field :current_location, placeholder: "Current Location", class: "col-md-6" %>
+      </div>
+      <div class = "form-group">
+        <%= f.submit 'Create an Account', class: 'btn btn-primary'%>
+      </div>
+    <% end %>
+  </div>
+
+</div>

@@ -1,35 +1,36 @@
 <div class="navbar navbar-default navbar-fixed-left">
-  <a class="navbar-brand" href="#">Brand</a>
+  <a class="navbar-brand">My Groups</a>
   <ul class="nav navbar-nav">
-   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-     <ul class="dropdown-menu" role="menu">
-      <li><a href="#">Sub Menu1</a></li>
-      <li><a href="#">Sub Menu2</a></li>
-      <li><a href="#">Sub Menu3</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Sub Menu4</a></li>
-      <li><a href="#">Sub Menu5</a></li>
-     </ul>
-   </li>
+    <% @groups.each do |g| %>
+      <li><%= link_to g.name, group_path(g) %></li>
+    <% end %>
+    <% if @user == current_user%>
+      <li><%= link_to "New Group", new_group_path %></li>
+    <% end %>
    <li><a href="#">Invitations</a></li>
-   <li><a href="#">Link2</a></li>
-   <li><a href="#">Link3</a></li>
-   <li><a href="#">Link4</a></li>
-   <li><a href="#">Link5</a></li>
   </ul>
 </div>
+
 <div class="container">
  <div class="row">
-   <h2><%= @user.first_name + " " + @user.last_name %>'s Page</h2>
-
-   <h2><%= @user.first_name %>'s groups:</h2>
-   <% @groups.each do |g| %>
-     <li><%= link_to g.name, group_path(g) %></li>
-   <% end %>
-
-   <% if @user == current_user%>
-     <h4><%= link_to "Create New Group", new_group_path %></h4>
-   <% end %>
+   <div class="col-md-12 username">
+     <h2><%= @user.first_name + " " + @user.last_name %>'s Page</h2>
+     <div class="">
+       <%= image_tag @user.profile_pic, {size: '200x200', class: "img-circle"} %>
+     </div>
+     <div class="">
+       Name: <%= @user.first_name + " " + @user.last_name  %>
+     </div>
+     <div class="">
+       <span class="glyphicon glyphicon-envelope"></span> <%= @user.email %>
+     </div>
+     <div class="">
+       🎉<%= @user.birthday.to_formatted_s(:long_ordinal) %>
+     </div>
+     <div class="">
+       <span class="glyphicon glyphicon-map-marker"></span> <%= @user.current_location %>
+     </div>
+   </div>
  </div>
 </div>
 

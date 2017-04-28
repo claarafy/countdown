@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 #           PATCH  /posts/:id(.:format)      posts#update
 #           PUT    /posts/:id(.:format)      posts#update
 #           DELETE /posts/:id(.:format)      posts#destroy
-  # post '/groups/:group_id/invites' => 'invites#create'
+
   resources :groups do
     resources :posts
     resources :invites
