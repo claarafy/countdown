@@ -14,14 +14,22 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
+body {
+  background: url("leaves.png");
+  background-size: cover;
+}
 .title {
+  font-family: 'Reenie Beanie', cursive;
   text-align: center;
-  padding-top: 15%;
+  margin-top: 25%;
 }
 .title > h1 {
   font-family: 'Reenie Beanie', cursive;
   font-size: 80px;
+}
+.countdown-div {
+  text-align: center;
+  margin-top: 5%;
 }
 .countdown {
   border-radius: 5px;
@@ -81,4 +89,7 @@
   margin-top: 10%;
   width: 80%;
   border: 1px grey dotted;
+}
+.session-new {
+  margin-top: 10%;
 }
