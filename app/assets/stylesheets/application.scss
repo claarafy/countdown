@@ -14,11 +14,10 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
-body {
-  background: url("leaves02.png");
-
-  background-size: cover;
-}
+ body {
+   background: url("leaves02.png");
+   background-size: cover;
+ }
 .title {
   font-family: 'Reenie Beanie', cursive;
   font-weight: 900;
