@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :users
+  resources :users do
+    resources :invites
+  end
 #   users   GET    /users(.:format)          users#index
 #           POST   /users(.:format)          users#create
 # new_user  GET    /users/new(.:format)      users#new
@@ -9,6 +11,16 @@ Rails.application.routes.draw do
 #           PATCH  /users/:id(.:format)      users#update
 #           PUT    /users/:id(.:format)      users#update
 #           DELETE /users/:id(.:format)      users#destroy
+
+# user_invites      GET    /users/:user_id/invites(.:format)            invites#index
+#                   POST   /users/:user_id/invites(.:format)            invites#create
+#   new_user_invite GET    /users/:user_id/invites/new(.:format)        invites#new
+#  edit_user_invite GET    /users/:user_id/invites/:id/edit(.:format)   invites#edit
+#       user_invite GET    /users/:user_id/invites/:id(.:format)        invites#show
+#                   PATCH  /users/:user_id/invites/:id(.:format)        invites#update
+#                   PUT    /users/:user_id/invites/:id(.:format)        invites#update
+#                   DELETE /users/:user_id/invites/:id(.:format)        invites#destroy
+
   resources :posts
 #   posts   GET    /posts(.:format)          posts#index
 #           POST   /posts(.:format)          posts#create
@@ -23,7 +35,6 @@ Rails.application.routes.draw do
     resources :posts
     resources :invites
   end
-
 #   groups  GET    /groups(.:format)          groups#index
 #           POST   /groups(.:format)          groups#create
 # new_group GET    /groups/new(.:format)      groups#new
@@ -50,7 +61,6 @@ Rails.application.routes.draw do
 #                   PATCH  /groups/:group_id/invites/:id(.:format)      invites#update
 #                   PUT    /groups/:group_id/invites/:id(.:format)      invites#update
 #                   DELETE /groups/:group_id/invites/:id(.:format)      invites#destroy
-
 
   delete '/logout' => 'sessions#destroy', as: :logout
   resources :sessions, only: [:new, :create]
