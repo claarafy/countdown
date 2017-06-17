@@ -20,6 +20,7 @@ This application is built using Ruby on Rails, Bootstrap, CSS, and HTML.
 ![](project02_wireframe.png)
 
 **ERD Model**
+
 ![](project02_model.png)
 
 [User stories List](https://1drv.ms/x/s!Atf2EKHjvdCefr2WRWuA0Uk9n9g)
