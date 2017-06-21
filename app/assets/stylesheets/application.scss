@@ -15,14 +15,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  body {
-   background: image-url("leaves02.png");
+   background: image-url("unsplash_icecream.jpg");
    background-size: cover;
  }
  .container {
-   background-color: rgba(255,255,255,0.7)
+  //  background-color: rgba(255,255,255,0.7)
  }
 .title {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Lobster', cursive;
   font-weight: 900;
   text-align: center;
   margin-top: 25%;
@@ -31,8 +31,12 @@
   filter: alpha(opacity=60);
 }
 .title > h1 {
-  font-family: 'Reenie Beanie', cursive;
   font-size: 80px;
+}
+.title > h3 {
+  font-family: 'Spectral', serif;
+  font-size: 30px;
+  margin-top: 5%;
 }
 .countdown-div {
   text-align: center;
